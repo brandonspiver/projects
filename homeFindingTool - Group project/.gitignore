@@ -1,0 +1,16 @@
+node_modules/
+coverage/
+build/
+.vscode
+__pycache__
+*/.env
+*/env
+*/.venv/
+*/venv
+backend/output.txt
+backend/api-key.txt
+backend/selenium
+backend/selenium.egg-info
+backend/dist
+backend/build
+.gitsecret/keys/random_seed/
