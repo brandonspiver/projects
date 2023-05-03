@@ -11,15 +11,15 @@ Before executing, ensure a files directory is in the same directory as client.ja
 1. To run the server(in terminal):
 
    `$ java server.java <Port>`
-   
+
    Port: Choose an available port to run ser on
 
 2. To run Client (in new terminal, for each client):
 
    `$ java client.java <Server Address> <Server Port> <Client Port>`
-   
+
    Server Address: InetAddress ser is running on.
-   
+
    Server Port: Port server is running on.
-   
-   Client Port: Choose a port to run client on for file transfer.
+
+   Client Port: Choose an available port to run client on for file transfer.
