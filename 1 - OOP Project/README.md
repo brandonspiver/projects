@@ -1,4 +1,4 @@
-## VoIP, File sharing, Voice Note and Messaging
+## VoIP and Messaging
 
 This project uses maven to run, Ensure its installed
 
