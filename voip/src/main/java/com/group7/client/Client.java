@@ -3,39 +3,21 @@ package com.group7.client;
 import java.io.*;
 import java.net.*;
 import java.util.*;
-
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.application.Platform;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -288,8 +270,6 @@ public class Client extends Application {
                     selectedAvatar = avatarComboBox.getSelectionModel().getSelectedItem();
                 }
                 avatarPath = avatarFolderDir.getAbsolutePath() + "/" + selectedAvatar;
-                // System.out.println(username);
-                // System.out.println(avatarPath);
                 if (socket == null) {
                     socket = new Socket(serverAddress, serverPortNr);
                     bw = new BufferedWriter(new OutputStreamWriter(
@@ -358,13 +338,6 @@ public class Client extends Application {
         scene.getStylesheets().add("voip/src/main/resources/com/group7/assets/styles.css");
         stage.setScene(scene);
         stage.show();
-
-        // outgoingCallEndButton.setOnAction(event -> {
-        // client.muteButton.setDisable(true);
-        // client.hangUpButton.setDisable(true);
-        // client.addParticipantButton.setDisable(true);
-
-        // });
     }
 
     /**
@@ -455,52 +428,12 @@ public class Client extends Application {
                 }
                 if (usernameLabel != null && username != null) {
                     messageReciever = username;
-                    // selectedUsers.add(new User(username, null)); // pass null as the second
-                    // parameter since we're not
-                    // storing the image path
                 } else {
                     System.out.println("MESSAGER REICVER BLANK");
                 }
             });
-            // String usernameReciever = null;
-            // System.out.println("SIZE IF SELECTED! ELSE!! " + selectedHboxUsers.size());
-
-            // // direct message
-            // Node node = (Node) selectedHboxUsers.get(0).getChildren().get(0);
-            // if (node instanceof Label) {
-            // usernameLabel = (Label) node;
-            // usernameReciever = usernameLabel.getText();
-            // if (usernameLabel != null) {
-            // messageReciever = usernameReciever;
-            // System.out.println(messageReciever);
-            // }
-            // } else {
-            // System.out.println("not finding label!!");
-            // }
 
         }
-        // iterate through each HBox in the ObservableList
-
-        // if (!selectedHboxUsers.isEmpty()) {
-        // selectedHboxUsers.forEach(hbox -> {
-        // String username = null;
-        // // iterate through each child of the HBox until the first Label is found
-        // for (Node node : hbox.getChildren()) {
-        // // check if the child is a label
-        // if (node instanceof Label) {
-        // // do something with the label
-        // usernameLabel = (Label) node;
-        // username = usernameLabel.getText();
-        // break; // exit the loop after the first Label is found
-        // }
-        // }
-        // if (usernameLabel != null && username != null) {
-        // selectedUsers.add(new User(username, null)); // pass null as the second
-        // parameter since we're not
-        // // storing the image path
-        // }
-        // });
-        // }
 
         // String message;
         if (messageReciever.equals("BROADCAST")) {
@@ -530,9 +463,6 @@ public class Client extends Application {
 
             });
         }
-
-        // inputText.setText("");
-        // sendToServer(message);
     }
 
     /**
