@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: white; -fx-background-color: #220059;" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group7.client.Client">
+   <children>
+      <Button fx:id="acceptButton" layoutX="76.0" layoutY="285.0" mnemonicParsing="false" onAction="#acceptCall" prefHeight="58.0" prefWidth="140.0" style="-fx-background-color: green;" text="ANSWER" />
+      <Button fx:id="declineButton" layoutX="386.0" layoutY="285.0" mnemonicParsing="false" onAction="#declineCall" prefHeight="58.0" prefWidth="140.0" style="-fx-background-color: red;" text="DECLINE" />
+      <Text layoutX="235.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" styleClass="label" text="INCOMING CALL" wrappingWidth="129.375" />
+      <ImageView fitHeight="93.0" fitWidth="129.0" layoutX="253.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/animation/call.gif" />
+         </image>
+      </ImageView>
+      <HBox fx:id="incomingCallHbox" layoutX="168.0" layoutY="88.0" prefHeight="73.0" prefWidth="263.0" />
+   </children>
+</AnchorPane>

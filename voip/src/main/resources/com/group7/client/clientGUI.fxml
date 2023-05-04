@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="935.0" prefWidth="1200.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group7.client.Client">
+   <children>
+      <SplitPane dividerPositions="0.3896321070234114" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="775.0" prefWidth="1200.0" stylesheets="@../assets/styles.css">
+         <items>
+            <VBox prefHeight="183.0" prefWidth="463.0">
+               <children>
+                  <TitledPane animated="false" prefHeight="707.0" prefWidth="463.0" style="-fx-background-color: #220059;" text="Online Users">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="onlineUsersListView" prefHeight="677.0" prefWidth="463.0" style="-fx-background-color: #220059;" stylesheets="@../assets/styles.css" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="456.0" spacing="80.0" style="-fx-background-color: #310874; -fx-border-color: white;">
+                     <children>
+                        <Button fx:id="callButton" graphicTextGap="10.0" mnemonicParsing="false" onAction="#startCall" prefHeight="30.0" prefWidth="126.0" text="Call">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" iconName="PHONE" size="20" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="615.0" prefWidth="574.0">
+               <children>
+                  <TabPane fx:id="mainTabPane" prefHeight="847.0" prefWidth="727.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Messages">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextArea prefHeight="48.0" prefWidth="727.0" promptText="Select a user on the left panel to mesage them." />
+                                    <HBox alignment="CENTER_LEFT" layoutY="668.0" prefHeight="66.0" prefWidth="727.0" spacing="20.0" style="-fx-background-color: #220059;">
+                                       <children>
+                                          <TextField fx:id="inputText" prefHeight="30.0" prefWidth="518.0">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" iconName="MICROPHONE" size="20" />
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendMessage">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" iconName="SEND" />
+                                             </graphic>
+                                          </Button>
+                                          <Button mnemonicParsing="false">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" iconName="PAPERCLIP" size="20" />
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="140.0" layoutY="381.0" prefHeight="23.0" prefWidth="351.0" stylesheets="@../assets/styles.css">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <Pane layoutX="61.0" layoutY="500.0" prefHeight="23.0" prefWidth="352.0" />
+                                    <TextArea fx:id="chatTextArea" layoutY="48.0" prefHeight="621.0" prefWidth="727.0" styleClass="textArea" stylesheets="@../assets/styles.css" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <graphic>
+                              <FontAwesomeIcon fill="#5207d3" iconName="INBOX" />
+                           </graphic>
+                      </Tab>
+                      <Tab text="Calls">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="661.0" style="-fx-background-color: #706089;">
+                                 <children>
+                                    <TextArea prefHeight="48.0" prefWidth="727.0" promptText="Select a user on the left panel to call them." />
+                                    <AnchorPane fx:id="gridAnchorPane" layoutX="-0.7071067690849304" layoutY="46.29289245605469">
+                                       <children>
+                                          <GridPane fx:id="callersGridPane" prefHeight="621.0" prefWidth="727.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox alignment="CENTER" layoutY="666.0" prefHeight="67.0" prefWidth="727.0" spacing="20.0" style="-fx-background-color: #220059;">
+                                       <children>
+                                          <Button fx:id="muteButton" mnemonicParsing="false" onAction="#muteMic" prefHeight="30.0" prefWidth="175.0" text="Mute">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" iconName="MICROPHONE_SLASH" size="20" />
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="hangUpButton" mnemonicParsing="false" onAction="#hangUpCall" prefHeight="30.0" prefWidth="162.0" text="Hang up">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="#ff6767" iconName="PHONE" rotate="134.1" size="20" />
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="addParticipantButton" mnemonicParsing="false" onAction="#addParticipant" prefHeight="30.0" prefWidth="177.0" text="Add participant">
+                                             <graphic>
+                                                <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="20" />
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <graphic>
+                              <FontAwesomeIcon fill="#5207d3" iconName="PHONE" />
+                           </graphic>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </items>
+         <effect>
+            <Blend />
+         </effect>
+      </SplitPane>
+      <HBox alignment="CENTER_LEFT" prefHeight="160.0" prefWidth="1200.0" spacing="200.0" style="-fx-border-color: white; -fx-background-color: #220059;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo/VOIPER_LOGO.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Pane prefHeight="152.0" prefWidth="499.0">
+               <children>
+                  <ImageView fx:id="avatarImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="usernameLabel" layoutX="205.0" layoutY="66.0" text="USERNAME">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

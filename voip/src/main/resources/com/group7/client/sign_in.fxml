@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="918.0" style="-fx-border-color: white; -fx-background-color: #220059;" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="signInButton" layoutX="648.0" layoutY="405.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="127.0" text="SIGN IN" />
+      <TextField fx:id="usernameField" layoutX="270.0" layoutY="375.0" promptText="Enter username..." />
+      <Text fill="WHITE" layoutX="55.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_normal" text="Username" />
+      <Text fill="WHITE" layoutX="183.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_heading" text="SIGN IN" />
+      <Text fill="WHITE" layoutX="55.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_normal" text="Choose an avatar" />
+      <ComboBox fx:id="avatarComboBox" layoutX="270.0" layoutY="452.0" prefHeight="30.0" prefWidth="208.0" promptText="-SELECT-" visibleRowCount="3" />
+      <ImageView fitHeight="286.0" fitWidth="329.0" layoutX="568.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logo/VOIPER_LOGO.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="addressField" layoutX="270.0" layoutY="170.0" promptText="Enter address..." />
+      <Text fill="WHITE" layoutX="56.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_normal" text="Port Number" />
+      <TextField fx:id="portField" layoutX="270.0" layoutY="240.0" promptText="Enter port number..." />
+      <Text fill="WHITE" layoutX="55.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_normal" text="Server Address" />
+      <Text fill="WHITE" layoutX="56.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sign_in_normal" text="Call Port Number" />
+      <TextField fx:id="callNumberField" layoutX="270.0" layoutY="308.0" promptText="Enter call port number..." />
+   </children>
+</AnchorPane>

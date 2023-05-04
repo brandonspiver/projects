@@ -1,0 +1,46 @@
+.root{
+    -fx-background-color: rgb(5,2,39);
+}
+
+.label{
+    -fx-font-size: 20;
+    /*-fx-font-family: "Lucida console";*/
+    -fx-text-fill: white;
+    /*-fx-alignment: center;*/
+}
+
+.button{
+    -fx-background-color: #7fb4f5;
+    /*-fx-border-radius: 0px;
+    -fx-border-width: 2px;
+    -fx-border-color: red;*/
+    -fx-font-size: 18;
+    -fx-font-family: "Lucida console";
+    -fx-text-fill: black;
+    /*-fx-alignment: center;*/
+}
+
+.text-field{
+    -fx-control-inner-background: white;
+    /*-fx-font-size: 20;*/
+    -fx-font-family: "Lucida console";
+    -fx-text-fill: black;
+    /*-fx-alignment: center;*/
+}
+
+.text-area {
+    -fx-control-inner-background: #7fb5f5;
+}
+
+#clientList {
+    -fx-control-inner-background: white;
+}
+
+.choice-box {
+   -fx-backgroundcolor: #7fb4f5;
+   -fx-focus-color: midnightblue;
+   -fx-faint-focus-color: #7fb4f5;
+   -fx-control-inner-background: #ADD8E6;
+   -fx-selection-bar: "midnightblue";
+-fx-selection-bar-text-fill: black;
+}

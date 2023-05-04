@@ -1,0 +1,59 @@
+* {
+    -fx-font-family: 'Kollekif';
+    -fx-font-size: 16px;
+
+}
+
+.label {
+    -fx-font-family: 'Kollekif';
+    -fx-font-size: 16px;
+    -fx-text-fill: 'white';
+
+}
+
+.textArea {
+    -fx-font-family: 'Kollekif';
+    -fx-font-size: 16px;
+    -fx-text-fill: 'black';
+
+}
+
+.listview-background {
+    -fx-background-color: '#5E17EB';
+
+
+}
+
+.usernameLabel {
+    -fx-font-family: 'Kollekif';
+    -fx-font-size: 30px;
+    -fx-text-fill: 'white';
+
+}
+
+.button {
+    -fx-background-color: '#5E17EB';
+    -fx-text-fill: 'white';
+}
+
+
+.sign_in_button {
+    -fx-background-color: '#5E17EB';
+    -fx-text-fill: 'white';
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.logo {
+    -fx-font-family: 'AC Compacta';
+    -fx-font-size: 15px;
+}
+
+.sign_in_heading {
+    -fx-font-family: 'Impact';
+    -fx-font-size: 25px;
+}
+
+.sign_in_normal {
+    -fx-font-size: 20px;
+}
